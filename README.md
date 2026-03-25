@@ -6,21 +6,21 @@
 ## 📌 Overview
 **Deepfake Detector Pro** is a computer vision tool built to combat synthetic media in 2026. Leveraging the **SigLIP-2 (Vision Transformer)** architecture, the system identifies pixel-level inconsistencies and structural artifacts typical of AI-generated content.
 
-Initially developed for static image classification, this version features a **custom temporal sampling engine** to analyze video files across distributed frames.
+Initially developed for static image classification, this version features a **custom temporal sampling engine** to analyze video files.
 
 ## ⚙️ Technical Architecture
 The application follows a modular pipeline to ensure high accuracy while maintaining low inference latency on CPU infrastructure:
 
 1. **Preprocessing:** Images are normalized and resized using the `AutoImageProcessor`.
-2. **Video Engine:** For `.mp4` and `.avi` files, the system implements a **5-frame sampling logic** via OpenCV to detect temporal anomalies.
-3. **Inference:** Tensors are processed through the `Deep-Fake-Detector-v2-Model` (ViT) to generate detection logits.
-4. **Post-processing:** Softmax activation provides a final confidence score for `Realism` vs. `Deepfake`.
+2. **Video Engine:** For `.mp4` and `.avi` files, the system implements a **5-frame sampling logic** via OpenCV.
+3. **Inference:** Tensors are passed through the `Deep-Fake-Detector-v2-Model` (ViT) to generate logits.
+4. **Post-processing:** Softmax activation provides a confidence score for `Realism` vs. `Deepfake`.
 
 ## 🚀 Deployment
 The project is containerized and hosted on **Hugging Face Spaces**.
-* **Frontend:** Gradio 5.x
-* **Deep Learning:** PyTorch & Transformers
-* **Vision Processing:** OpenCV (cv2)
+* **Framework:** Gradio 5.x
+* **Backend:** PyTorch
+* **Computer Vision:** OpenCV (cv2)
 
 ## 🛠️ Installation & Local Usage
 ```bash
